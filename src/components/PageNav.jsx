@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 function PageNav() {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <Logo />
       <ul className={styles.nav}>
         <li>

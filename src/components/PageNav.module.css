@@ -1,13 +1,16 @@
 .nav {
   display: flex;
-  justify-content: baseline;
+  justify-content: space-between;
 }
 
-nav ul {
+.nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: baseline;
   gap: 4rem;
+}
+
+.nav ul li {
+  padding-top: 1rem;
 }
 .nav a:link,
 .nav a:visited {
