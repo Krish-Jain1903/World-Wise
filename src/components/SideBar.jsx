@@ -8,8 +8,6 @@ function SideBar() {
       <Logo />
       <AppNav />
       <Outlet />
-
-      <p>List of Cities</p>
       <footer className={styles.footer}>
         <p className={styles.copyright}>
           &copy; Copyright 2025 by WorldWise Inc.
