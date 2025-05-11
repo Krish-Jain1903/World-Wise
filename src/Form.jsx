@@ -4,7 +4,7 @@
 import { useState } from "react";
 
 import styles from "./Form.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Button from "./components/Button";
 
 export function convertToEmoji(countryCode) {
@@ -21,6 +21,9 @@ function Form() {
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
 
   return (
     <form className={styles.form}>

@@ -1,25 +1,66 @@
+/* eslint-disable no-unused-vars */
 // import { useNavigate } from "react-router-dom";
 import styles from "../Map.module.css";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useState } from "react";
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+  useMap,
+  useMapEvents,
+} from "react-leaflet";
+import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useGeolocation } from "../hooks/useGeoLoacation";
+import Button from "./Button";
 
 function Map() {
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const lat = searchParams.get("lat");
-  // const lng = searchParams.get("lng");
+  const [searchParams] = useSearchParams();
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
 
-  // eslint-disable-next-line no-unused-vars
   const [mapPosition, setMapPosition] = useState([19.07283, 72.88261]);
   const { cities } = useCities();
+
+  const {
+    isLoading: isLoadingPosition,
+    position: getGeolocationPosition,
+    getPosition,
+  } = useGeolocation();
+
+  useEffect(
+    function () {
+      setMapPosition((mapPosition) =>
+        lat === null ? mapPosition : [lat, lng]
+      );
+    },
+    [lat, lng]
+  );
+
+  useEffect(
+    function () {
+      getGeolocationPosition &&
+        setMapPosition([
+          getGeolocationPosition["lat"],
+          getGeolocationPosition["lng"],
+        ]);
+    },
+    [getGeolocationPosition]
+  );
 
   // const navigate = useNavigate();
 
   return (
     <div className={styles.mapContainer}>
+      {!getGeolocationPosition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "Loadong..." : "Use Your Positon"}
+        </Button>
+      )}
       <MapContainer
         center={mapPosition}
-        zoom={13}
+        zoom={7}
         scrollWheelZoom={false}
         className={styles.map}
       >
@@ -44,9 +85,32 @@ function Map() {
             </Marker>
           );
         })}
+
+        <ChangeCenter position={mapPosition} />
+        <DetectClick />
       </MapContainer>
     </div>
   );
+}
+
+// THIS IS USED FOR RERENDERING MAP COMPONENT WITH NEW POSITIONS IN LEAFLET
+function ChangeCenter({ position }) {
+  const map = useMap();
+  map.setView(position);
+
+  return null;
+}
+
+// THIS IS USED TO PERFORM ANY KIND OF EVENT ON MAP IN LEAFLET
+function DetectClick() {
+  const navigate = useNavigate();
+
+  useMapEvents({
+    click: (e) => {
+      console.log(e.latlng);
+      navigate(`/app/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+    },
+  });
 }
 
 export default Map;
