@@ -1,18 +1,6 @@
 {
   "cities": [
     {
-      "id": "dcce",
-      "cityName": "Palghar",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2025-05-11T14:28:16.831Z",
-      "notes": "Test City",
-      "position": {
-        "lat": "19.80930581425056",
-        "lng": "72.78442382812501"
-      }
-    },
-    {
       "id": "44d5",
       "cityName": "Pune",
       "country": "India",
@@ -34,6 +22,18 @@
       "position": {
         "lat": "19.021630263476116",
         "lng": "72.86682128906251"
+      }
+    },
+    {
+      "id": "0b92",
+      "cityName": "Palghar",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2025-05-11T18:05:05.993Z",
+      "notes": "My Relatives Leave here",
+      "position": {
+        "lat": "19.696894594253493",
+        "lng": "72.76845932006837"
       }
     }
   ]
