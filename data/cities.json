@@ -1,64 +1,40 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
+      "id": "dcce",
+      "cityName": "Palghar",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2025-05-11T14:28:16.831Z",
+      "notes": "Test City",
       "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
+        "lat": "19.80930581425056",
+        "lng": "72.78442382812501"
+      }
     },
     {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
+      "id": "44d5",
+      "cityName": "Pune",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2025-05-11T14:39:06.366Z",
+      "notes": "Test City One More Time",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
+        "lat": "18.482036054360062",
+        "lng": "73.88305664062501"
+      }
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
-    },
-    {
+      "id": "9748",
       "cityName": "Mumbai",
       "country": "India",
-      "emoji": "IND",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "emoji": "🇮🇳",
+      "date": "2025-05-11T17:06:15.781Z",
+      "notes": "It was Fantastic 😍",
       "position": {
-        "lat": 19.0728,
-        "lng": 72.88261
-      },
-      "id": 98443198
-    },
-    {
-      "cityName": "Banglore",
-      "country": "India",
-      "emoji": "IND",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 55.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443493
+        "lat": "19.021630263476116",
+        "lng": "72.86682128906251"
+      }
     }
   ]
 }
