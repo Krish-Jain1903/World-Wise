@@ -28,6 +28,7 @@ function reducer(state, action) {
       };
 
     case "cities/deleted":
+      console.log(state);
       return {
         ...state,
         isLoading: false,
