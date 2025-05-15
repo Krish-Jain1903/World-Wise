@@ -37,7 +37,6 @@ function reducer(state, action) {
 
     default:
       break;
-      console.log(hello);
   }
 }
 
